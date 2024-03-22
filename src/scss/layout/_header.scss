@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header{
+    @include m.bgImage('../../../build/img/header.jpg');
+    height: 80vh;
+
+    &__text-box{
+        text-align: center;
+        margin-top: 20rem;
+        font-weight: bold;
+    }
+
+    &__busqueda-boton{
+        @include m.boton(v.$blanco, v.$primario);
+    }
+}
+
+.barra{
+    display: flex;
+
+    @include m.tablet{
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 2rem;
+    }
+
+    p, a{
+        color: v.$blanco;
+        font-weight: bold;
+    }
+    
+}
+
+.navegacion a{
+    padding-right: 3rem;
+
+    &:last-of-type{
+        padding-right: 0;
+    }
+}
